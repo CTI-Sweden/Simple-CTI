@@ -37,7 +37,7 @@
             <h3><a href="{{ .RelPermalink }}">{{ .Name }}</a></h3>
         </div>
         <div class="author-email">
-            <p>{{ .Params.email }}</p>
+            <p><a href="mailto:{{ $params.email }}">{{ .Params.email }}</a></p>
         </div>
     </div>
     {{ end }}

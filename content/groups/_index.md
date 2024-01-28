@@ -1,5 +1,3 @@
 +++
 title = "Groups"
 +++
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi scelerisque eu ultrices vitae auctor eu augue. Malesuada fames ac turpis egestas sed tempus urna et pharetra. Risus nullam eget felis eget nunc lobortis mattis. Vestibulum lorem sed risus ultricies tristique nulla. Risus pretium quam vulputate dignissim suspendisse in. Maecenas accumsan lacus vel facilisis volutpat est. Vitae aliquet nec ullamcorper sit amet risus. Nunc sed blandit libero volutpat sed cras. Enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra. Porttitor rhoncus dolor purus non enim praesent elementum. Senectus et netus et malesuada fames. Tempus quam pellentesque nec nam aliquam sem et. Morbi enim nunc faucibus a pellentesque. Odio aenean sed adipiscing diam. Feugiat scelerisque varius morbi enim nunc faucibus. Consequat nisl vel pretium lectus quam id leo in. Ut porttitor leo a diam sollicitudin tempor id.This is the groups

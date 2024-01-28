@@ -20,7 +20,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
-  padding: 0 1vh;
+  padding: 0.5vh 1vh 0;
 }
 
 header h1 {
@@ -37,6 +37,15 @@ footer {
 a {
   color: #00e;
   text-decoration: none;
+}
+
+.highlight {
+  width: fit-content;
+}
+
+.highlight pre {
+  padding: 1vh;
+  min-width: 20vh;
 }
 
 .flex-row {
