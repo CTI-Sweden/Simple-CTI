@@ -1,0 +1,8 @@
+{{ define "main" }}
+<p>This is a single group:</p>
+
+    {{ .Content }}
+    
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    {{ partial "terms.html" (dict "taxonomy" "sectors" "page" .)}}
+{{ end }}

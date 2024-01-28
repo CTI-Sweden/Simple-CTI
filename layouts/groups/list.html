@@ -1,0 +1,11 @@
+{{ define "main" }}
+<p>This is the list of groups:</p>
+    {{ $paginator := .Paginate .RegularPagesRecursive 10 }}
+    {{ range $paginator.Pages }}
+        {{ if .Layout }}
+            {{/* ignore search.md file*/}}
+        {{ else }}
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+        {{ end }}
+    {{ end }}
+{{ end }}

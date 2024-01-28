@@ -1,0 +1,49 @@
+{{ define "main" }}
+{{ $pubDate := .PublishDate | time.Format ":date_long"}}
+{{ $pubTime := .PublishDate | time.Format ":time_short" }}
+{{ $modDate := .Lastmod | time.Format ":date_long"}}
+{{ $modTime := .Lastmod | time.Format ":time_short" }}
+{{ $params := .Params }}
+<article>
+    <div class="article-header">
+        <h2>{{ .Name }}</h2>
+        <div class="incident-metadata">
+            <table>
+                <tr>
+                    <td><span class="date-label">Published:</span></td><td><span class="date">{{ $pubDate }} {{ $pubTime }}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date-label">Edited:</span></td><td><span class="date">{{ $modDate }} {{ $modTime }}</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="article-body">
+        {{ .Content }}
+    </div>
+
+</article>
+
+<hr />
+
+{{ $authors := where site.Pages "Section" "authors" }}
+{{ $authors = where $authors ".Name" "in" $params.authors}}
+
+<div class="incident-authors">
+    <h2>Authors:</h2>
+    {{ range $authors}}
+    <div class="author">
+        <div class="author-name">
+            <h3><a href="{{ .RelPermalink }}">{{ .Name }}</a></h3>
+        </div>
+        <div class="author-email">
+            <p>{{ .Params.email }}</p>
+        </div>
+    </div>
+    {{ end }}
+</div>
+
+{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+{{ partial "terms.html" (dict "taxonomy" "sectors" "page" .)}}
+{{ partial "terms.html" (dict "taxonomy" "tagged-groups" "page" .)}}
+{{ end }}

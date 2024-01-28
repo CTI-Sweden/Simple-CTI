@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ $params := .Params }}
+<h1>{{ .Name }}</h1>
+
+    <table>
+        <tr>
+            <td>Website:</td>
+            <td><a href="{{ $params.website }}">{{ $params.website }}</a></td>
+        </tr>
+        <tr>
+            <td>github:</td>
+            <td><a href="https://github.com/{{ $params.github }}">{{ $params.github }}</a></td>
+        </tr>
+        <tr>
+            <td>linkedin</td>
+            <td><a href="https://www.linkedin.com/in/{{ $params.linkedin }}">{{ $params.linkedin }}</a></td>
+        </tr>
+    </table>
+
+    {{ .Content }}
+    
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    {{ partial "terms.html" (dict "taxonomy" "sectors" "page" .)}}
+{{ end }}
