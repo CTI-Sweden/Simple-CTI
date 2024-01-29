@@ -1,17 +1,26 @@
-name = 'Simple CTI '
+name = 'Simple CTI'
 license = 'MIT'
 licenselink = 'https://github.com/CTI-Sweden/Simple-CTI/LICENSE'
 description = 'Simple CTI theme'
 
 # The home page of the theme, where the source can be found
-homepage = 'https://github.com/owner/repo'
+homepage = 'https://github.com/CTI-Sweden/Simple-CTI'
 
 # If you have a running demo of the theme
 demosite = 'https://owner.github.io/repo'
 
 # Taxonomy terms
-tags = ['blog', 'cti', 'information']
-features = ['some', 'awesome', 'features']
+tags = [
+  'News',
+  'CTI',
+  'Information',
+  'Minimalist'
+]
+features = [
+  'Correlation',
+  'Minimalist Design',
+  'Responsive'
+]
 
 # If the theme has a single author
 [author]

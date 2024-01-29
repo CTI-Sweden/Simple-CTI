@@ -1,25 +1,38 @@
 {{ define "main" }}
-  {{ .Content }}
-  <div class="homepage-latest flex-row flex-space-evenly">
-    <div class="row">
-      <h2>Incidents</h2>
-      <ul>
-        {{ range (where site.Pages "Section" "incidents") }}
-          {{ range .Pages }}
-            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-          {{ end }}
-        {{ end }}
-      </ul>
-    </div>
-    <div class="row">
-      <h2>News</h2>
-      <ul>
-        {{ range (where site.Pages "Section" "posts") }}
-          {{ range .Pages }}
-            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-          {{ end }}
-        {{ end }}
-      </ul>
-    </div>
+{{ .Content }}
+<div class="article-header">
+  <h1>Latest updates</h1>
+</div>
+<div class="homepage-latest flex-row flex-space-evenly">
+  <div class="row">
+    <h2>Incidents</h2>
+    <ul>
+      {{ range (where site.Pages "Section" "incidents") }}
+      {{ range .Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+      {{ end }}
+    </ul>
   </div>
+  <div class="row">
+    <h2>News</h2>
+    <ul>
+      {{ range (where site.Pages "Section" "posts") }}
+      {{ range .Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+  <div class="row">
+    <h2>Groups</h2>
+    <ul>
+      {{ range (where site.Pages "Section" "groups") }}
+      {{ range .Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</div>
 {{ end }}

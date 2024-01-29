@@ -1,0 +1,15 @@
+{{ $authorList := .authors }}
+{{ $authors := where site.Pages "Section" "authors" }}
+{{ $authors = where $authors ".Name" "in" $authorList }}
+
+{{ range $authors }}
+{{ $params := .Params}}
+<div class="author">
+    <div class="author-name">
+        <h3><a href="{{ .RelPermalink }}">{{ .Name }}</a></h3>
+    </div>
+    <div class="author-email">
+        <p><a href="mailto:{{ $params.email }}">{{ .Params.email }}</a></p>
+    </div>
+</div>
+{{ end }}

@@ -6,7 +6,7 @@ body {
   background-color: ghostwhite;
 }
 
-header {
+.navbar {
   background-color: black;
   color: lightgrey;
   margin-bottom: 1rem;
@@ -41,12 +41,12 @@ a {
 
 blockquote {
   border-left: darkkhaki 0.3vh solid;
-  padding-left: 1vh;
   background-color: floralwhite;
   width: fit-content;
   padding: 0.5rem 1rem;
   min-width: 20rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  quotes: auto;
 }
 
 blockquote {
@@ -171,7 +171,7 @@ nav {
 }
 
 main {
-  padding: 1vh;
+  padding: 1rem;
 }
 
 .dropdown {
@@ -197,7 +197,7 @@ main {
   margin-bottom: 2vh;
 }
 
-.article-header h2 {
+.article-header h1 {
   width: fit-content;
   margin: 1vh auto;
 }
@@ -241,4 +241,96 @@ main {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  align-items: flex-end;
+  gap: 0;
+}
+
+.content-left {
+  min-width: 20%;
+  max-width: 60%;
+}
+
+.content-right {
+  min-width: 20%;
+  border: 1px solid lightgray;
+  background-color: whitesmoke;
+  margin-top: 4rem;
+  height: fit-content;
+}
+
+.sidebar {
+  padding: 1rem;
+}
+
+.incident-summary {
+  border: 1px solid gray;
+  padding: 1rem;
+}
+
+.incident-summary.summary-item {
+  width: fit-content;
+}
+
+.summary-item {
+  max-width: 30rem;
+}
+
+.summary-item h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.labels {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.label-section {
+  width: fit-content;
+}
+
+.label-item {
+  background-color: lightblue;
+  font-size: xx-small;
+  border: 1px gray solid;
+  border-radius: 5px;
+  padding: 0.2rem;
+  font-weight: bold;
+  color: black;
+}
+
+.label-item:hover {
+  background-color: lightyellow;
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    padding: 0;
+  }
+  .content {
+    padding: 0;
+  }
+  .content-left {
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  .content-right {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem 0 0 0;
+  }
+  .incident-authors {
+    padding: 0.2rem 1rem;
+  }
 }

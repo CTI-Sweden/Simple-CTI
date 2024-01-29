@@ -1,49 +1,52 @@
 {{ define "main" }}
-{{ $pubDate := .PublishDate | time.Format ":date_long"}}
+{{ $pubDate := .PublishDate | time.Format ":date_long" }}
 {{ $pubTime := .PublishDate | time.Format ":time_short" }}
-{{ $modDate := .Lastmod | time.Format ":date_long"}}
+{{ $modDate := .Lastmod | time.Format ":date_long" }}
 {{ $modTime := .Lastmod | time.Format ":time_short" }}
 {{ $params := .Params }}
-<article>
-    <div class="article-header">
-        <h2>{{ .Name }}</h2>
-        <div class="incident-metadata">
-            <table>
-                <tr>
-                    <td><span class="date-label">Published:</span></td><td><span class="date">{{ $pubDate }} {{ $pubTime }}</span></td>
-                </tr>
-                <tr>
-                    <td><span class="date-label">Edited:</span></td><td><span class="date">{{ $modDate }} {{ $modTime }}</span></td>
-                </tr>
-            </table>
+
+<div class="article-header">
+    <h1>{{ .Name }}</h1>
+    <div class="incident-metadata">
+        <table>
+            <tr>
+                <td><span class="date-label">Published:</span></td>
+                <td><span class="date">{{ $pubDate }} {{ $pubTime }}</span></td>
+            </tr>
+            <tr>
+                <td><span class="date-label">Edited:</span></td>
+                <td><span class="date">{{ $modDate }} {{ $modTime }}</span></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="content">
+    <div class="content-left">
+        <article>
+            <div class="article-body">
+                {{ .Content }}
+            </div>
+        </article>
+    </div>
+    <div class="content-right">
+        <div class="sidebar">
+        <aside>
+            {{ partial "navigators/toc.html" .}}
+            {{ partial "navigators/pages.html" (dict "section" "groups" "pages" (.Param "groups") "page" . ) }}
+            {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }}
+            {{ partial "terms.html" (dict "taxonomy" "sectors" "page" .) }}
+            {{ partial "terms.html" (dict "taxonomy" "tactics" "page" .) }}
+            {{ partial "terms.html" (dict "taxonomy" "techniques" "page" .) }}
+            {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+        </aside>
         </div>
     </div>
-    <div class="article-body">
-        {{ .Content }}
-    </div>
-
-</article>
-
+</div>
 <hr />
-
-{{ $authors := where site.Pages "Section" "authors" }}
-{{ $authors = where $authors ".Name" "in" $params.authors}}
 
 <div class="incident-authors">
     <h2>Authors:</h2>
-    {{ range $authors}}
-    <div class="author">
-        <div class="author-name">
-            <h3><a href="{{ .RelPermalink }}">{{ .Name }}</a></h3>
-        </div>
-        <div class="author-email">
-            <p><a href="mailto:{{ $params.email }}">{{ .Params.email }}</a></p>
-        </div>
-    </div>
-    {{ end }}
+    {{ partial "authors.html" (dict "authors" $params.authors "page" .) }}
 </div>
 
-{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-{{ partial "terms.html" (dict "taxonomy" "sectors" "page" .)}}
-{{ partial "terms.html" (dict "taxonomy" "tagged-groups" "page" .)}}
 {{ end }}

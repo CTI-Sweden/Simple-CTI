@@ -1,0 +1,17 @@
+<article>
+    <div class="incident-summary summary-item">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <span class="label">Updated: </span><span span="value">{{ .Lastmod }}</span>
+        <div class="labels">
+            <div class="label-section">
+                {{ partial "labels/pages.html" (dict "section" "groups" "pages" (.Param "groups") ) }}
+            </div>
+            <div class="label-section">
+                {{ partial "labels.html" (dict "taxonomy" "sectors" "page" .) }}
+            </div>
+            <div class="label-section">
+                {{ partial "labels.html" (dict "taxonomy" "tactics" "page" .) }}
+            </div>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+{{ .Content }}
+
+<h2>Aktivitet:</h2>
+{{ range .Pages }}
+{{ .Render ".Content" }}
+{{ end }}
+
+{{ end }}

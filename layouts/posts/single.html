@@ -25,24 +25,28 @@
         <article>
             <div class="article-body">
                 {{ .Content }}
-                <h2>Senaste Aktivitet:</h2>
-                {{ range .Pages }}
-                {{ .Render "summary" }}
-                {{ end }}
             </div>
         </article>
     </div>
     <div class="content-right">
         <div class="sidebar">
-            <aside>
-                {{ partial "navigators/toc.html" . }}
-                {{ partial "terms.html" (dict "taxonomy" "countries" "page" . ) }}
-                {{ partial "terms.html" (dict "taxonomy" "sectors" "page" . ) }}
-                {{ partial "terms.html" (dict "taxonomy" "tactics" "page" . ) }}
-                {{ partial "terms.html" (dict "taxonomy" "techniques" "page" . ) }}
-                {{ partial "terms.html" (dict "taxonomy" "tags" "page" . ) }}
-            </aside>
+        <aside>
+            {{ partial "navigators/toc.html" .}}
+            {{ partial "terms.html" (dict "taxonomy" "groups" "page" .) }}
+            {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }}
+            {{ partial "terms.html" (dict "taxonomy" "sectors" "page" .) }}
+            {{ partial "terms.html" (dict "taxonomy" "tactics" "page" .) }}
+            {{ partial "terms.html" (dict "taxonomy" "techniques" "page" .) }}
+            {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+        </aside>
         </div>
     </div>
 </div>
+<hr />
+
+<div class="incident-authors">
+    <h2>Authors:</h2>
+    {{ partial "authors.html" (dict "authors" $params.authors "page" .) }}
+</div>
+
 {{ end }}

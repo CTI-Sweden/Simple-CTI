@@ -1,2 +1,6 @@
 [home]
 other = "Hem"
+
+[incident]
+other = "Incident"
+toc = "Innehållsförteckning"
