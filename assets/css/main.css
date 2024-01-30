@@ -286,6 +286,7 @@ main {
 
 .summary-item {
   max-width: 30rem;
+  margin-bottom: 1rem;
 }
 
 .summary-item h3 {

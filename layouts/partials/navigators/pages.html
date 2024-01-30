@@ -1,6 +1,7 @@
 {{ $pages := where site.Pages "Section" .section }}
 {{ $pages = where $pages ".Name" "in" .pages }}
 {{ .site.GetPage "groups" }}
+{{ if $pages }}
 <header>
     {{ range (where site.Sections ".Section" .section) }}
     <h3>{{ .Name }}</h3>
@@ -10,4 +11,5 @@
 <ul>
     <li><a href="{{ .RelPermalink }}">{{ .Name }}</a></li>
 </ul>
+{{ end }}
 {{ end }}
