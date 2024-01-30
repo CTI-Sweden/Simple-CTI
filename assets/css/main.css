@@ -103,6 +103,11 @@ blockquote {
 .flex-row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-center {
+  justify-content: center;
 }
 
 .flex-space-evenly {
@@ -332,5 +337,10 @@ main {
   }
   .incident-authors {
     padding: 0.2rem 1rem;
+  }
+
+  .row {
+    width: 100%;
+    padding: 0.5rem 1rem;
   }
 }
