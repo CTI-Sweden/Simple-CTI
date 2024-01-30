@@ -2,24 +2,25 @@
 {{ $params := .Params }}
 <h1>{{ .Name }}</h1>
 
-    <table>
-        <tr>
-            <td>Email:</td>
-            <td><a href="mailto:{{ $params.email }}">{{ $params.email }}</a></td>
-        </tr>
-        <tr>
-            <td>Website:</td>
-            <td><a href="{{ $params.website }}">{{ $params.website }}</a></td>
-        </tr>
-        <tr>
-            <td>github:</td>
-            <td><a href="https://github.com/{{ $params.github }}">{{ $params.github }}</a></td>
-        </tr>
-        <tr>
-            <td>linkedin</td>
-            <td><a href="https://www.linkedin.com/in/{{ $params.linkedin }}">{{ $params.linkedin }}</a></td>
-        </tr>
-    </table>
+    <div class="labels">
+    <div class="label-section">
+    {{- if $params.email }}
+    <span class="label-item"><a href="mailto:{{ $params.email }}">{{ $params.email }}</a></span>
+    {{- end }}
+
+    {{- if $params.website }}
+    <span class="label-item"><a href="{{ $params.website }}">{{ $params.website }}</a></span>
+    {{- end }}
+
+    {{- if $params.github }}
+    <span class="label-item"><a href="https://github.com/{{ $params.github }}">GitHub@{{ $params.github }}</a></span>
+    {{- end }}
+
+    {{- if $params.linkedin }}
+    <span class="label-item"><a href="https://www.linkedin.com/in/{{ $params.linkedin }}">Linkedin</a></span>
+    {{- end }}
+</div>
+</div>
 
     {{ .Content }}
     
