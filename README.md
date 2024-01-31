@@ -23,3 +23,13 @@ technique = "techniques"
 
 ## Configuration
 Comming soon
+
+## Edit locally
+
+To edit the theme and see the changes locally in realtime you can add an replacement to go.mod
+
+```
+replace(
+    github.com/CTI-Sweden/Simple-CTI => ../Simple-CTI
+)
+```
